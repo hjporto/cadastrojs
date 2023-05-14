@@ -30,7 +30,10 @@
         </div>
         <div class="fields">
           <label for="cpf">CPF:</label>
-          <input type="text" name="cpf" id="cpf" placeholder="CPF">
+          <span type="number" role="alert" id="nameError" aria-hidden="true">
+            <input type="text" name="cpf" id="cpf" placeholder="CPF">
+          </span>
+
         </div>
       </div>
 
@@ -106,8 +109,9 @@
         </div>
         <div class="fields">
           <label for="cep">CEP</label>
-          <input type="text" name="cep" id="cep" placeholder="12345-789">
+          <input type="text" name="cep" id="cep" placeholder="12345789" inputmode="numeric">
         </div>
+        <button id="completarCep">preencher</button>
       </div>
 
       <div class="lines">

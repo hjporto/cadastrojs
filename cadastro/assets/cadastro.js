@@ -1,3 +1,24 @@
+const preencherCep = document.getElementById("cep");
+const completarCep = document.getElementById("completarCep");
+let cep = "";
+completarCep.addEventListener("click", () => {
+  const meuCep = `https://viacep.com.br/ws/${preencherCep.value}/json/ `;
+  console.log(meuCep);
+
+  fetch(meuCep)
+    .then((response) => response.json())
+    .then((json) => {
+      cep = json;
+      console.log(cep);
+    });
+  document.getElementById("endereco").value = cep.logradouro;
+  document.getElementById("bairro").value = cep.bairro;
+  document.getElementById("numero").value = cep.numero;
+  document.getElementById("cidade").value = cep.localidade;
+  // document.getElementById("estado").getSelection = cep.uf;
+
+  // document.getElementById("bairro").value = data.bairro;
+});
 document.getElementById("cadastro").addEventListener("click", cadastrar);
 function cadastrar() {
   // alert(recebe.value);
@@ -17,5 +38,5 @@ function cadastrar() {
     cidade: document.getElementById("cidade").value,
     estado: document.getSelection("estado").value,
   };
-  console.log(form);
+  console.log(JSON.stringify(form));
 }
