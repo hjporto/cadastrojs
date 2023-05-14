@@ -15,13 +15,9 @@ completarCep.addEventListener("click", () => {
   document.getElementById("bairro").value = cep.bairro;
   document.getElementById("numero").value = cep.numero;
   document.getElementById("cidade").value = cep.localidade;
-  // document.getElementById("estado").getSelection = cep.uf;
-
-  // document.getElementById("bairro").value = data.bairro;
 });
 document.getElementById("cadastro").addEventListener("click", cadastrar);
 function cadastrar() {
-  // alert(recebe.value);
   const form = {
     nome: document.getElementById("name").value,
     cpf: document.getElementById("cpf").value,
